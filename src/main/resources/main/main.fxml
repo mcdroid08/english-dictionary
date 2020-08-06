@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
+   <AnchorPane layoutX="-9.0" layoutY="-9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitWidth="1920.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <viewport>
+            <Rectangle2D height="1080.0" width="1920.0" />
+         </viewport>
+         <Image url="@../icons/background.jpg" />
+      </ImageView>
+      <Region opacity="0.23" prefHeight="85.0" style="-fx-background-color: black; -fx-background-radius: 10;" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="9.0" layoutY="9.0" prefHeight="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <ImageView fitHeight="50.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets left="25.0" right="25.0" />
+            </HBox.margin>
+            <Image url="@../icons/dict.png" />
+         </ImageView>
+         <HBox alignment="CENTER" fillHeight="false" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 25;">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="20.0" right="20.0" top="5.0" />
+               </padding>
+               <effect>
+                  <DropShadow color="#000000e2" height="40.0" radius="19.5" width="40.0" />
+               </effect>
+               <JFXTextField fx:id="search" focusColor="#0077ff" onAction="#searchWord" prefHeight="35.0" prefWidth="500.0" promptText="Type to search ...">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </JFXTextField>
+               <ImageView fx:id="searchIcon" fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" rotate="-85.0">
+                  <HBox.margin>
+                     <Insets left="3.0" right="-8.0" />
+                  </HBox.margin>
+                  <Image url="@../icons/search.png" />
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </ImageView>
+            </HBox>
+         </HBox>
+         <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <HBox.margin>
+               <Insets left="25.0" right="25.0" />
+            </HBox.margin>
+            <ImageView fx:id="bookmarks" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <Image url="@../icons/bookmark.png" />
+            </ImageView>
+            <ImageView fx:id="about" fitHeight="35.0" fitWidth="35.0" layoutX="10.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <Image url="@../icons/info.png" />
+            </ImageView>
+         </HBox>
+      </HBox>
+   </AnchorPane>
+   <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="115.0" spacing="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="115.0">
+      <JFXButton fx:id="prevWord" prefHeight="30.0" prefWidth="100.0" ripplerFill="#00ff04" style="-fx-background-color: white;" text="&lt;- Prev">
+         <font>
+            <Font name="Consolas Bold" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="nextWord" prefHeight="30.0" prefWidth="100.0" ripplerFill="#00ff04" style="-fx-background-color: white;" text="Next -&gt;">
+         <font>
+            <Font name="Consolas Bold" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <HBox alignment="CENTER_RIGHT" spacing="7.0" HBox.hgrow="ALWAYS">
+         <ImageView fx:id="addToBookmark" fitHeight="32.0" fitWidth="32.0" layoutX="256.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <Image url="@../icons/addTo.png" />
+         </ImageView>
+         <ImageView fx:id="deleteWord" fitHeight="32.0" fitWidth="32.0" layoutX="293.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <Image url="@../icons/delete.png" />
+         </ImageView>
+         <ImageView fx:id="addWord" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets right="5.0" />
+            </HBox.margin>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <Image url="@../icons/add.png" />
+         </ImageView>
+      </HBox>
+   </HBox>
+   <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="20.0" layoutY="164.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-border-color: #ccc;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="164.0">
+      <AnchorPane>
+         <Region disable="true" focusTraversable="true" opacity="0.6" style="-fx-background-color: black;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+         <VBox AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+            <HBox alignment="CENTER_LEFT">
+               <Label fx:id="word" text="Gradually">
+                  <font>
+                     <Font name="Marlett" size="26.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Label>
+               <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+                  <Label fx:id="wordType" text="(Adjective)">
+                     <font>
+                        <Font name="MV Boli" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </HBox>
+            </HBox>
+            <VBox fx:id="meaning" alignment="CENTER_LEFT" spacing="10.0">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Some thing with slow rate">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Text>
+               <Text fill="WHITE" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In a gradual manner.">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Text>
+               <Text fill="WHITE" layoutX="10.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="step by step, as in ascent or descent or from one state to another" textAlignment="JUSTIFY" wrappingWidth="500.0">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Text>
+            </VBox>
+         </VBox>
+      </AnchorPane>
+   </ScrollPane>
+</AnchorPane>
